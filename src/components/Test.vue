@@ -91,7 +91,13 @@
             {
               name:'累计确诊',
               // 柱状图:bar
-              type:"line",
+              type:"bar",
+              label:{
+							show:true,
+							// 数值显示在顶部 top
+							position:'top',
+						  },
+						  barWidth:'30%',
               data:yDataArr,
             }
           ],
