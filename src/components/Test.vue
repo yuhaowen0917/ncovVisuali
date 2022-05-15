@@ -16,7 +16,6 @@
         cityName:[],
         // 城市患者
         cityConfirm:[],
-
         count:[]
       }
     },
@@ -45,16 +44,16 @@
               this.drawLine()
 
               // let statisGradeCityDetail = response.data.data.statisGradeCityDetail;
-              // console.log(statisGradeCityDetail);
+              // // console.log(statisGradeCityDetail);
               // for (let i=0;i<statisGradeCityDetail.length;i++){
               //   // count.push({
               //   //   city:statisGradeCityDetail[i].city,
               //   //   province:statisGradeCityDetail[i].province,
               //   //   //  confirm 累计确证 confirmAdd 新增确诊 heal 治愈 dead 死亡 nowConfirm 目前确认
               //   // })
-              //   count.push(statisGradeCityDetail[i].city)
+              //   this.count.push(statisGradeCityDetail[i].city)
               // }
-              // console.log(count)
+              // console.log(this.count)
               // return count
               
             })
@@ -97,7 +96,7 @@
 							// 数值显示在顶部 top
 							position:'top',
 						  },
-						  barWidth:'30%',
+						  barWidth:'50%',
               data:yDataArr,
             }
           ],
