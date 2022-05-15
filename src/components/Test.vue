@@ -114,7 +114,7 @@
 
 <style scoped>
   .qwe{
-    width: 2000px;
+    width: 1500px;
     height: 500px;
     border: 1px solid #f53c66;
   }
