@@ -1,5 +1,5 @@
 <template>
-  <div class="qwe"></div>
+  <div class="zhu"></div>
 </template>
 
 <script>
@@ -7,25 +7,23 @@
   import * as echarts from "echarts";
   import axios from "axios";
   export default {
-    name: "Test",
+    name: "Histogram",
     data(){
       return{
-        // 全国累计确诊人数
-        num:'',
         // 城市名称
         cityName:[],
         // 城市患者
         cityConfirm:[],
-        count:[],
+        // 城市+累计确诊
         provList:[]
       }
     },
     created(){
+      this.dataList();
             
     },
     methods:{
       dataList(){
-        
         axios.get("https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf")
             .then(response=>{
               // console.log(response.data.data);
@@ -53,31 +51,16 @@
                 this.cityName.push(this.provList[i].cityName);
                 this.cityConfirm.push(this.provList[i].cityConfirm)
               }
-              console.log(this.provList)
+              // console.log(this.provList)
               // 画柱状图
               this.drawLine()
-			  
-			  // 各个等级城市详情
-			  // console.log(response.data.data.statisGradeCityDetail);
-              // let statisGradeCityDetail = response.data.data.statisGradeCityDetail;
-              // // console.log(statisGradeCityDetail);
-              // for (let i=0;i<statisGradeCityDetail.length;i++){
-              //   // count.push({
-              //   //   city:statisGradeCityDetail[i].city,
-              //   //   province:statisGradeCityDetail[i].province,
-              //   //   //  confirm 累计确证 confirmAdd 新增确诊 heal 治愈 dead 死亡 nowConfirm 目前确认
-              //   // })
-              //   this.count.push(statisGradeCityDetail[i].city)
-              // }
-              // console.log(this.count)
-              
             })
             .catch(error=>{
               console.log(error)
             })
       },
       drawLine(){
-        let myCharts = echarts.init(document.querySelector(".qwe"));
+        let myCharts = echarts.init(document.querySelector(".zhu"));
         let xDataArr=this.cityName;
         let yDataArr=this.cityConfirm;
         // console.log(cityConfirm)
@@ -133,13 +116,12 @@
       }
     },
     mounted() {
-      this.dataList();
     }
   }
 </script>
 
 <style scoped>
-  .qwe{
+  .zhu{
     width: 700px;
     height: 400px;
     border: 1px solid #f53c66;

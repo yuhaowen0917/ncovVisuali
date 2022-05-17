@@ -1,13 +1,15 @@
 <template>
 <!--  <img alt="Vue logo" src="./assets/logo.png">-->
-  <Test></Test>
+  <Histogram></Histogram>
+  <topdataWrap></topdataWrap>
 </template>
 
 <script>
 /* eslint-disable */
   import axios from 'axios'
   import * as echarts from 'echarts'
-  import Test from "@/components/Test";
+  import Histogram from "@/components/Histogram";
+  import topdataWrap from "@/components/topdataWrap";
   export default {
     name: 'App',
     data(){
@@ -15,7 +17,8 @@
       }
     },
     components: {
-      Test
+      Histogram,
+      topdataWrap
     },
     methods:{
 
@@ -32,12 +35,4 @@
 </script>
 
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
 </style>
