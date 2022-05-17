@@ -16,15 +16,15 @@
         cityName:[],
         // 城市患者
         cityConfirm:[],
-        count:[]
+        count:[],
+        provList:[]
       }
     },
     created(){
-        
             
     },
     methods:{
-      data(){
+      dataList(){
         
         axios.get("https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf")
             .then(response=>{
@@ -37,10 +37,25 @@
               // console.log(diseaseh5Shelf.areaTree[0].children);
               let china = diseaseh5Shelf.areaTree[0].children;
               for (let i=0;i<china.length;i++){
-                this.cityName.push(china[i].name);
-                this.cityConfirm.push(china[i].total.confirm)
+                this.provList.push({
+                  cityName:china[i].name,
+                  // 累计确诊
+                  cityConfirm:china[i].total.confirm
+                })
+                
               }
-              console.log(this.cityConfirm)
+              this.provList.sort(
+                function (a, b) {
+                  return b.cityConfirm - a.cityConfirm;
+                  }
+              );
+              this.provList.length=10;
+              for(let i=0;i<this.provList.length;i++){
+                this.cityName.push(this.provList[i].cityName);
+                this.cityConfirm.push(this.provList[i].cityConfirm)
+              }
+              console.log(this.provList)
+              // 画柱状图
               this.drawLine()
 
               // let statisGradeCityDetail = response.data.data.statisGradeCityDetail;
@@ -54,7 +69,6 @@
               //   this.count.push(statisGradeCityDetail[i].city)
               // }
               // console.log(this.count)
-              // return count
               
             })
             .catch(error=>{
@@ -96,7 +110,7 @@
 							// 数值显示在顶部 top
 							position:'top',
 						  },
-						  barWidth:'50%',
+						  barWidth:'30%',
               data:yDataArr,
             }
           ],
@@ -106,14 +120,14 @@
       }
     },
     mounted() {
-      this.data();
+      this.dataList();
     }
   }
 </script>
 
 <style scoped>
   .qwe{
-    width: 1500px;
+    width: 800px;
     height: 500px;
     border: 1px solid #f53c66;
   }
