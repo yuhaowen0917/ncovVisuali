@@ -29,8 +29,7 @@
         axios.get("https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf")
             .then(response=>{
               // console.log(response.data.data);
-              // 各个等级城市详情
-              // console.log(response.data.data.statisGradeCityDetail);
+              
               let diseaseh5Shelf = response.data.data.diseaseh5Shelf;
               // console.log(diseaseh5Shelf.chinaTotal.confirm)
               this.num = diseaseh5Shelf.chinaTotal.confirm;
@@ -57,7 +56,9 @@
               console.log(this.provList)
               // 画柱状图
               this.drawLine()
-
+			  
+			  // 各个等级城市详情
+			  // console.log(response.data.data.statisGradeCityDetail);
               // let statisGradeCityDetail = response.data.data.statisGradeCityDetail;
               // // console.log(statisGradeCityDetail);
               // for (let i=0;i<statisGradeCityDetail.length;i++){
@@ -87,7 +88,7 @@
             data:xDataArr,
             // type: 'value',
             // 紧挨边缘
-            boundaryGap:false,
+            // boundaryGap:false,
           },
           yAxis:{
             type: 'value',
@@ -95,6 +96,18 @@
             // data:xDataArr,
             // 缩放，脱离0值比例
             scale:true,
+            data: ['10k', '20k', '30k', '40k', '50k', '60k', '70k'],
+            axisLabel: {
+              show: true,
+              // color: 'green',
+              // fontSize: 12,
+              formatter: function (value) {
+                if (value >= 1000) {
+                  value = value / 1000 + 'k';
+                }
+                return value;
+              }
+            },
           },
           tooltip:{
             // 触发类型 trigger
@@ -105,12 +118,12 @@
               name:'累计确诊',
               // 柱状图:bar
               type:"bar",
-              label:{
-							show:true,
-							// 数值显示在顶部 top
-							position:'top',
-						  },
-						  barWidth:'30%',
+              // label:{
+							// show:true,
+							// // 数值显示在顶部 top
+							// position:'top',
+						  // },
+						  // barWidth:'30%',
               data:yDataArr,
             }
           ],
@@ -127,8 +140,8 @@
 
 <style scoped>
   .qwe{
-    width: 800px;
-    height: 500px;
+    width: 700px;
+    height: 400px;
     border: 1px solid #f53c66;
   }
 </style>
