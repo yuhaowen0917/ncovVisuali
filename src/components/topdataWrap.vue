@@ -1,10 +1,10 @@
 <template>
     <div class="recentNumber">
-        <div>
-            <div v-for="(da,index) in dataList" :key="index">
+        <div class="content">
+            <div v-for="(da,index) in dataList" :key="index" class="num">
                 <div>{{da.desc}}</div>
                 <div>{{da.total}}</div>
-                <div>{{da.add}}</div>
+                <div>较昨日{{da.add}}</div>
             </div>
         </div>
     </div>
@@ -96,13 +96,7 @@
                                 add:diseaseh5Shelf.chinaAdd.dead,
                                 desc:"累计死亡"
                             },
-                            
-                            // this.nowConfirm,
-                            // this.confirm,
-                            // this.noInfect,
-                            // this.importedCase,
-                            // this.heal,
-                            // this.dead
+
                         )
                         // console.log(diseaseh5Shelf.chinaAdd)
                     
@@ -123,5 +117,18 @@
         width: 700px;
         height: 300px;
         background-color: #a1afc9;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .num{
+        display: flex;
+        width: 25%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
     }
 </style>
