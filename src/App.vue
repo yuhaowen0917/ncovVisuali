@@ -2,14 +2,16 @@
 <!--  <img alt="Vue logo" src="./assets/logo.png">-->
   <Histogram></Histogram>
   <topdataWrap></topdataWrap>
+  <addLine></addLine>
+  <totalLine></totalLine>
 </template>
 
 <script>
 /* eslint-disable */
-  import axios from 'axios'
-  import * as echarts from 'echarts'
   import Histogram from "@/components/Histogram";
   import topdataWrap from "@/components/topdataWrap";
+  import addLine from "@/components/addLine";
+  import totalLine from "@/components/totalLine";
   export default {
     name: 'App',
     data(){
@@ -18,7 +20,9 @@
     },
     components: {
       Histogram,
-      topdataWrap
+      topdataWrap,
+      addLine,
+      totalLine
     },
     methods:{
 
