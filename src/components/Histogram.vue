@@ -27,10 +27,7 @@
         axios.get("https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf")
             .then(response=>{
               // console.log(response.data.data);
-              
               let diseaseh5Shelf = response.data.data.diseaseh5Shelf;
-              // console.log(diseaseh5Shelf.chinaTotal.confirm)
-              this.num = diseaseh5Shelf.chinaTotal.confirm;
               // console.log(diseaseh5Shelf.areaTree[0].children);
               let china = diseaseh5Shelf.areaTree[0].children;
               for (let i=0;i<china.length;i++){
