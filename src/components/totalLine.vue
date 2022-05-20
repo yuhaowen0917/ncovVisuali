@@ -15,7 +15,7 @@
             getData(){
                 axios.get("https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf")
                 .then(res=>{
-                    console.log(res.data.data);
+                    // console.log(res.data.data);
                 })
                 .catch(error=>{
                     console.log(error)

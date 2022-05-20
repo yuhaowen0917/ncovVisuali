@@ -83,7 +83,7 @@
               // fontSize: 12,
               formatter: function (value) {
                 if (value >= 1000) {
-                  value = value / 1000 + 'k';
+                  value = value / 10000 + 'w';
                 }
                 return value;
               }
