@@ -6,6 +6,7 @@
 </template>
 
 <script>
+    import * as echarts from "echarts";
     import axios from 'axios';
     export default{
         name:"addLine",
@@ -33,12 +34,86 @@
                         })
                     };
                     // 取近30天的数据
-                    this.dayAddList.splice(0,30)
-                    console.log(this.dayAddList)
+                    this.dayAddList.splice(0,30);
+                    // console.log(this.dayAddList);
+                    this.leftAdd()
+
                 })
                 .catch(error=>{
                     console.log(error)
                 })
+            },
+            leftAdd(){
+                let myCharts = echarts.init(document.querySelector(".addData"));
+                let xDataArr=[];
+                var yDataArr1=[];
+                var yDataArr2=[];
+                var yDataArr3=[];
+                var yDataArr4=[];
+
+                for(let i = 0;i<this.dayAddList.length;i++){
+                    xDataArr.push(this.dayAddList[i].date);
+                    yDataArr1.push(this.dayAddList[i].confirmAdd);
+                    yDataArr2.push(this.dayAddList[i].importedCaseAdd);
+                    yDataArr3.push(this.dayAddList[i].deadAdd);
+                    yDataArr4.push(this.dayAddList[i].healAdd);
+
+                }
+			          var option = {
+                    legend:{
+                        data:['确证人数','境外输入','死亡增加','治愈增加']
+                    },
+                    xAxis:{
+                        type:'category',
+                        data:xDataArr,
+                        // 紧挨边缘
+					              boundaryGap:false,
+                    },
+                    yAxis:{
+                        type: 'value',
+                        axisLabel: {
+                            show: true,
+                            formatter: function (value) {
+                                if (value) {
+                                value = value / 10000 + 'w';
+                                }
+                                return value;
+                            }
+                        },
+                    },
+                    tooltip:{
+                        // 触发类型 trigger
+                        trigger: 'axis',
+                    },
+                    series:[
+                        {
+                            name:'确证人数',
+                            type:"line",
+                            smooth: true,
+                            data:yDataArr1,
+                        },
+                        {
+                            name:'境外输入',
+                            type:"line",
+                            smooth: true,
+                            data:yDataArr2,
+                        },
+                        {
+                            name:'死亡增加',
+                            type:"line",
+                            smooth: true,
+                            data:yDataArr3,
+                        },
+                        {
+                            name:'治愈增加',
+                            type:"line",
+                            smooth: true,
+                            data:yDataArr4,
+                        }
+                    ],
+                }
+                // 将配置项设置给echarts对象
+                myCharts.setOption(option);
             }
         },
         created() {
@@ -48,4 +123,9 @@
 </script>
 
 <style scoped>
+    .addData{
+        width: 700px;
+        height: 500px;
+        background-color: #2cebb8ab;
+    }
 </style>
