@@ -22,12 +22,12 @@
                     for (let i=0;i<chinaDayList.length;i++){
                         this.dayList.push({
                             date:chinaDayList[i].date,
-                            deadAdd:chinaDayList[i].dead,
-                            healAdd:chinaDayList[i].heal,
+                            deadTotal:chinaDayList[i].dead,
+                            healTotal:chinaDayList[i].heal,
                             // 确诊总人数增加
-                            confirmAdd:chinaDayList[i].confirm,
+                            confirmTotal:chinaDayList[i].confirm,
                             // 境外输入增加
-                            importedCaseAdd:chinaDayList[i].importedCase,
+                            importedCaseTotal:chinaDayList[i].importedCase,
                         })
                     }
                     // 取近30天的数据
@@ -50,17 +50,17 @@
 
                 for(let i = 0;i<this.dayList.length;i++){
                     xDataArr.push(this.dayList[i].date);
-                    yDataArr1.push(this.dayList[i].confirmAdd);
-                    yDataArr2.push(this.dayList[i].importedCaseAdd);
-                    yDataArr3.push(this.dayList[i].deadAdd);
-                    yDataArr4.push(this.dayList[i].healAdd);
+                    yDataArr1.push(this.dayList[i].confirmTotal);
+                    yDataArr2.push(this.dayList[i].importedCaseTotal);
+                    yDataArr3.push(this.dayList[i].deadTotal);
+                    yDataArr4.push(this.dayList[i].healTotal);
 
                 }
 
               // eslint-disable-next-line no-mixed-spaces-and-tabs
 			        var option = {
                     legend:{
-                        data:['确证人数','境外输入','累计死亡','治愈']
+                        data:['确诊人数','境外输入','累计死亡','治愈']
                     },
                     xAxis:{
                         type:'category',
@@ -88,7 +88,7 @@
                     },
                     series:[
                         {
-                            name:'确证人数',
+                            name:'确诊人数',
                             type:"line",
                             data:yDataArr1,
                         },

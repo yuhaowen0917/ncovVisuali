@@ -63,6 +63,7 @@
         // console.log(cityConfirm)
         // console.log(yDataArr)
         var option = {
+          color:["#3cabf5"],
           xAxis:{
             type:'category',
             data:xDataArr,
@@ -76,7 +77,7 @@
             // data:xDataArr,
             // 缩放，脱离0值比例
             scale:true,
-            data: ['10k', '20k', '30k', '40k', '50k', '60k', '70k'],
+            // data: ['10k', '20k', '30k', '40k', '50k', '60k', '70k'],
             axisLabel: {
               show: true,
               // color: 'green',
@@ -121,6 +122,6 @@
   .zhu{
     width: 700px;
     height: 400px;
-    border: 1px solid #f53c66;
+    border: 1px solid #3cabf5;
   }
 </style>
