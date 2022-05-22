@@ -60,7 +60,7 @@
               // eslint-disable-next-line no-mixed-spaces-and-tabs
 			        var option = {
                     legend:{
-                        data:['确诊人数','境外输入','累计死亡','治愈']
+                        data:['累计确诊','境外输入','累计死亡','累计治愈']
                     },
                     xAxis:{
                         type:'category',
@@ -88,7 +88,7 @@
                     },
                     series:[
                         {
-                            name:'确诊人数',
+                            name:'累计确诊',
                             type:"line",
                             data:yDataArr1,
                         },
@@ -103,7 +103,7 @@
                             data:yDataArr3,
                         },
                         {
-                            name:'治愈',
+                            name:'累计治愈',
                             type:"line",
                             data:yDataArr4,
                         }

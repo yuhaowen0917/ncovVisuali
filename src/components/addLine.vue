@@ -1,7 +1,5 @@
 <template>
-    <!-- 
-        数据新增变化折线图
-     -->
+    <!-- 数据新增变化折线图-->
     <div class="addData"></div>
 </template>
 
@@ -32,7 +30,7 @@
                             // 境外输入增加
                             importedCaseAdd:chinaDayAddList[i].importedCase,
                         })
-                    };
+                    }
                     // 取近30天的数据
                     this.dayAddList.splice(0,30);
                     // console.log(this.dayAddList);
@@ -61,7 +59,7 @@
                 }
 			          var option = {
                     legend:{
-                        data:['确证人数','境外输入','死亡增加','治愈增加']
+                        data:['新增确诊','境外输入','死亡增加','治愈增加']
                     },
                     xAxis:{
                         type:'category',
@@ -87,7 +85,7 @@
                     },
                     series:[
                         {
-                            name:'确证人数',
+                            name:'新增确诊',
                             type:"line",
                             smooth: true,
                             data:yDataArr1,
