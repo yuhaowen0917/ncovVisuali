@@ -82,7 +82,7 @@
                             {
                                 total:this.noInfect,
                                 add:diseaseh5Shelf.chinaAdd.noInfect,
-                                desc:"无症状感染者"
+                                desc:"无症状患者"
                             },
                             {
                                 total:this.importedCase,

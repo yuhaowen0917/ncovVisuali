@@ -4,6 +4,7 @@
   <topdataWrap></topdataWrap>
   <addLine></addLine>
   <totalLine></totalLine>
+  <pie></pie>
 </template>
 
 <script>
@@ -12,6 +13,7 @@
   import topdataWrap from "@/components/topdataWrap";
   import addLine from "@/components/addLine";
   import totalLine from "@/components/totalLine";
+  import pie from "@/components/pie";
   export default {
     name: 'App',
     data(){
@@ -22,7 +24,8 @@
       Histogram,
       topdataWrap,
       addLine,
-      totalLine
+      totalLine,
+      pie
     },
     methods:{
 
