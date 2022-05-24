@@ -117,7 +117,8 @@
 
 <style scoped>
     .recentNumber{
-        width: 700px;
+        width: 600px;
+        /* width: 100%; */
         height: 300px;
         background-color: #a1afc9;
     }

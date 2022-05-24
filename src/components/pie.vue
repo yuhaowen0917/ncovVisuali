@@ -81,8 +81,10 @@
 
 <style scoped>
   .round{
-    width: 700px;
+    width: 550px;
+    /* width: 100%; */
     height: 400px;
-    border: 1px solid #be3be1;
+    /* height: 50%; */
+    /* border: 1px solid #be3be1; */
   }
 </style>

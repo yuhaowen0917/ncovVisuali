@@ -1,10 +1,21 @@
 <template>
 <!--  <img alt="Vue logo" src="./assets/logo.png">-->
-  <Histogram></Histogram>
-  <topdataWrap></topdataWrap>
-  <addLine></addLine>
-  <totalLine></totalLine>
-  <pie></pie>
+  <div class="overall">
+    <div>
+      <addLine></addLine>
+      <totalLine></totalLine>
+    </div>
+    <div>
+      <topdataWrap></topdataWrap>
+      <div class="map"></div>
+    </div>
+    <div>
+      <Histogram></Histogram>
+      <pie></pie>
+    </div>
+  </div>
+  
+  
 </template>
 
 <script>
@@ -42,4 +53,12 @@
 </script>
 
 <style>
+.overall{
+  display: flex;
+  /* width: 1400px; */
+  /* height: 800px; */
+}
+/* .overall>div{
+  width: 33.33%;
+} */
 </style>
