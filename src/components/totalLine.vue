@@ -121,8 +121,8 @@
 
 <style scoped>
     .totalData{
-        width: 550px;
-        /* width: 100%; */
+        /*width: 550px;*/
+         width: 100%;
         height: 400px;
         /* height: 50%; */
         background-color: #e29458b9;

@@ -122,8 +122,8 @@
 
 <style scoped>
     .addData{
-        width: 550px;
-        /* width: 100%; */
+        /*width: 550px;*/
+         width: 100%;
         height: 400px;
         /* height: 50%; */
         background-color: #2cebb8ab;

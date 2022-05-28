@@ -1,17 +1,19 @@
 <template>
 <!--  <img alt="Vue logo" src="./assets/logo.png">-->
-  <div class="overall">
-    <div>
-      <addLine></addLine>
-      <totalLine></totalLine>
-    </div>
-    <div>
-      <topdataWrap></topdataWrap>
-      <div class="map"></div>
-    </div>
-    <div>
-      <Histogram></Histogram>
-      <pie></pie>
+  <div class="overall container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <addLine></addLine>
+        <totalLine></totalLine>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <topdataWrap></topdataWrap>
+        <div class="map"></div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <Histogram></Histogram>
+        <pie></pie>
+      </div>
     </div>
   </div>
   
@@ -54,11 +56,14 @@
 
 <style>
 .overall{
-  display: flex;
-  /* width: 1400px; */
-  /* height: 800px; */
+  /*display: flex;*/
+  width: 100%;
+  /*overflow: hidden;*/
+   /*height: 1000px;*/
 }
-/* .overall>div{
-  width: 33.33%;
-} */
+.map{
+  width: 100%;
+  height: 300px;
+  background-color: #ec6060;
+}
 </style>

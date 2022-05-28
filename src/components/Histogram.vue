@@ -120,8 +120,8 @@
 
 <style scoped>
   .zhu{
-    width: 550px;
-    /* width: 100%; */
+    /*width: 550px;*/
+     width: 100%;
     height: 400px;
     /* height: 50%; */
     /* border: 1px solid #3cabf5; */

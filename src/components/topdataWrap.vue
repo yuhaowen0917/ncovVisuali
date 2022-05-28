@@ -117,15 +117,16 @@
 
 <style scoped>
     .recentNumber{
-        width: 600px;
-        /* width: 100%; */
-        height: 300px;
+        /*width: 600px;*/
+         width: 100%;
+        height: 45%;
         background-color: #a1afc9;
     }
     .content{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding-top: 20px;
     }
     .num{
         display: flex;
