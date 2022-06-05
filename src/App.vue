@@ -7,8 +7,8 @@
         <totalLine></totalLine>
       </div>
       <div class="col-lg-4 col-sm-12">
-        <topdataWrap></topdataWrap>
-        <div class="map"></div>
+        <topWrap></topWrap>
+        <china></china>
       </div>
       <div class="col-lg-4 col-sm-12">
         <Histogram></Histogram>
@@ -23,11 +23,12 @@
 <script>
 /* eslint-disable */
   import Histogram from "@/components/Histogram";
-  import topdataWrap from "@/components/topdataWrap";
+  import topWrap from "@/components/topdataWrap";
   import addLine from "@/components/addLine";
   import totalLine from "@/components/totalLine";
   import pie from "@/components/pie";
-  export default {
+  import china from "@/components/ChinaMap";
+export default {
     name: 'App',
     data(){
       return {
@@ -35,10 +36,11 @@
     },
     components: {
       Histogram,
-      topdataWrap,
+      topWrap,
       addLine,
       totalLine,
-      pie
+      pie,
+      china
     },
     methods:{
 
@@ -57,13 +59,10 @@
 <style>
 .overall{
   /*display: flex;*/
-  width: 100%;
-  /*overflow: hidden;*/
-   /*height: 1000px;*/
+  /*width: 100%;*/
+  height: 100%;
 }
-.map{
-  width: 100%;
-  height: 300px;
-  background-color: #ec6060;
+.row>div{
+  padding: 0;
 }
 </style>
