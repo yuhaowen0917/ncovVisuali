@@ -19,6 +19,9 @@ export default {
     getMap(){
       let myCharts = echarts.init(document.querySelector(".map"));
       echarts.registerMap('chinaMap',chinaJson);
+      window.addEventListener("resize", function () {
+        myCharts.resize();
+      });
       let option = {
         // 配置 geo 的 type:'map'
         geo:{

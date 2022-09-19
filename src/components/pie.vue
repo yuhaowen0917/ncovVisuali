@@ -53,6 +53,9 @@
       },
       drawRound(){
         let myCharts = echarts.init(document.querySelector(".round"));
+        window.addEventListener("resize", function () {
+          myCharts.resize();
+        });
         let pieData = this.dataList;
         let option = {
           legend: {

@@ -47,7 +47,6 @@
                 var yDataArr2=[];
                 var yDataArr3=[];
                 var yDataArr4=[];
-
                 for(let i = 0;i<this.dayList.length;i++){
                     xDataArr.push(this.dayList[i].date);
                     yDataArr1.push(this.dayList[i].confirmTotal);
@@ -56,7 +55,9 @@
                     yDataArr4.push(this.dayList[i].healTotal);
 
                 }
-
+              window.addEventListener("resize", function () {
+                myCharts.resize();
+              });
               // eslint-disable-next-line no-mixed-spaces-and-tabs
 			        var option = {
                     legend:{
@@ -110,7 +111,7 @@
                     ],
                 }
                 // 将配置项设置给echarts对象
-                myCharts.setOption(option);
+              myCharts.setOption(option);
             }
         },
         created() {

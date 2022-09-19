@@ -20,7 +20,7 @@
     },
     created(){
       this.dataList();
-            
+
     },
     methods:{
       dataList(){
@@ -36,7 +36,6 @@
                   // 累计确诊
                   cityConfirm:china[i].total.confirm
                 })
-                
               }
               this.provList.sort(
                 function (a, b) {
@@ -58,6 +57,9 @@
       },
       drawLine(){
         let myCharts = echarts.init(document.querySelector(".zhu"));
+        window.addEventListener("resize", function () {
+          myCharts.resize();
+        });
         let xDataArr=this.cityName;
         let yDataArr=this.cityConfirm;
         // console.log(cityConfirm)
@@ -67,17 +69,10 @@
           xAxis:{
             type:'category',
             data:xDataArr,
-            // type: 'value',
-            // 紧挨边缘
-            // boundaryGap:false,
           },
           yAxis:{
             type: 'value',
-            // type:'category',
-            // data:xDataArr,
-            // 缩放，脱离0值比例
             scale:true,
-            // data: ['10k', '20k', '30k', '40k', '50k', '60k', '70k'],
             axisLabel: {
               show: true,
               // color: 'green',

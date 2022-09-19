@@ -42,7 +42,10 @@
                 })
             },
             leftAdd(){
-                let myCharts = echarts.init(document.querySelector(".addData"));
+              let myCharts = echarts.init(document.querySelector(".addData"));
+              window.addEventListener("resize", function () {
+                myCharts.resize();
+              });
                 let xDataArr=[];
                 var yDataArr1=[];
                 var yDataArr2=[];
